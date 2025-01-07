@@ -1,4 +1,5 @@
 from langchain_core.tools import tool
+from langchain_openai import OpenAI
 @tool
 def generate_dalle_image(prompt: str):
     """
