@@ -2,8 +2,5 @@ langchain
 openai
 langchain-openai
 langchain-community
-langchain-experimental
 langgraph
-langserve[all]
 duckduckgo_search
-decouple
