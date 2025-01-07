@@ -4,11 +4,11 @@ from langgraph.prebuilt import create_react_agent
 from langchain_openai import ChatOpenAI
 
 ## Tools
-# from tools.dalle_image_generator import generate_dalle_image
+from tools.dalle_image_generator import generate_dalle_image
 from tools.duckduckgo_search import duckduckgo_search
 # from tools.python_interpreter import repl_tool
 
-tools=[duckduckgo_search]
+tools=[duckduckgo_search, generate_dalle_image]
 
 # Instantiate LLM
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
