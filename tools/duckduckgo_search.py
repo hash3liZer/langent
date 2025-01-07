@@ -1,0 +1,5 @@
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
+from langchain_community.tools import DuckDuckGoSearchResults
+
+wrapper = DuckDuckGoSearchAPIWrapper(max_results=10)
+duckduckgo_search = DuckDuckGoSearchResults(api_wrapper=wrapper)
