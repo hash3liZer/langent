@@ -1,5 +1,7 @@
 from langchain_core.tools import tool
 from langchain_openai import OpenAI
+from langchain_community.utilities.dalle_image_generator import DallEAPIWrapper
+
 @tool
 def generate_dalle_image(prompt: str):
     """
@@ -12,13 +14,7 @@ def generate_dalle_image(prompt: str):
     - str: The URL of the generated image.
     """
     client = OpenAI()
+    
+    image_url = DallEAPIWrapper().run(prompt)
 
-    response = client.images.generate(
-        model="dall-e-3",
-        prompt=prompt,
-        size="1024x1024",
-        quality="standard",
-        n=1,
-     )
-
-    return response.data[0].url
+    return image_url
